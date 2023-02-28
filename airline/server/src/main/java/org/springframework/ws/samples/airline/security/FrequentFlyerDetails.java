@@ -10,10 +10,12 @@ import org.springframework.ws.samples.airline.domain.FrequentFlyer;
 
 public class FrequentFlyerDetails implements UserDetails {
 
+	private static final long serialVersionUID = 1;
+
 	private static final List<GrantedAuthority> GRANTED_AUTHORITIES = List
 			.of(new SimpleGrantedAuthority("ROLE_FREQUENT_FLYER"));
 
-	private FrequentFlyer frequentFlyer;
+	private final FrequentFlyer frequentFlyer;
 
 	public FrequentFlyerDetails(FrequentFlyer frequentFlyer) {
 		this.frequentFlyer = frequentFlyer;
