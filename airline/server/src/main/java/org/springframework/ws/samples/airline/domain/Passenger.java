@@ -24,6 +24,8 @@ import java.io.Serializable;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Passenger implements Serializable {
 
+	private static final long serialVersionUID = 1;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID") private Long id;
@@ -74,11 +76,7 @@ public class Passenger implements Serializable {
 		if (!getFirstName().equals(passenger.getFirstName())) {
 			return false;
 		}
-		if (!getLastName().equals(passenger.getLastName())) {
-			return false;
-		}
-
-		return true;
+		return getLastName().equals(passenger.getLastName());
 	}
 
 	public int hashCode() {
