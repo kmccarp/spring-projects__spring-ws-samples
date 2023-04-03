@@ -29,6 +29,8 @@ import org.springframework.data.annotation.Persistent;
 @Table(name = "TICKET")
 public class Ticket implements Serializable {
 
+	private static final long serialVersionUID = 1;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
 
@@ -40,7 +42,7 @@ public class Ticket implements Serializable {
 
 	@ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinTable(name = "PASSENGER_TICKET", joinColumns = @JoinColumn(name = "TICKET_ID"), inverseJoinColumns = @JoinColumn(
-			name = "PASSENGER_ID")) private Set<Passenger> passengers = new HashSet<Passenger>();
+			name = "PASSENGER_ID")) private Set<Passenger> passengers = new HashSet<>();
 
 	public Ticket() {}
 

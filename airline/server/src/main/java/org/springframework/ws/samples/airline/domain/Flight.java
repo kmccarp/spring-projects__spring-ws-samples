@@ -26,6 +26,8 @@ import org.springframework.data.annotation.Persistent;
 @Table(name = "FLIGHT")
 public class Flight implements Serializable {
 
+	private static final long serialVersionUID = 1;
+
 	@Id
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
