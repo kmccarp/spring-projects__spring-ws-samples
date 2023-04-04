@@ -27,6 +27,8 @@ import java.io.Serializable;
 @Table(name = "AIRPORT")
 public class Airport implements Serializable {
 
+	private static final long serialVersionUID = 1;
+
 	@Id
 	@Column(name = "CODE") private String code;
 
