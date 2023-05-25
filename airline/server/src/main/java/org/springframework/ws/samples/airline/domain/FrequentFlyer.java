@@ -26,6 +26,8 @@ import jakarta.persistence.Table;
 @PrimaryKeyJoinColumn(name = "PASSENGER_ID")
 public class FrequentFlyer extends Passenger {
 
+	private static final long serialVersionUID = 1;
+
 	@Column(name = "USERNAME") private String username;
 
 	@Column(name = "PASSWORD") private String password;
