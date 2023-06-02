@@ -72,7 +72,7 @@ public class SaajMtomClient extends WebServiceGatewaySupport {
 
 		storeContentRequest.setName("spring-ws-logo");
 		storeContentRequest
-				.setContent(new DataHandler(Thread.currentThread().getContextClassLoader().getResource("spring-ws-logo.png")));
+		.setContent(new DataHandler(Thread.currentThread().getContextClassLoader().getResource("spring-ws-logo.png")));
 
 		this.stopWatch.start("store");
 
@@ -96,7 +96,7 @@ public class SaajMtomClient extends WebServiceGatewaySupport {
 		this.stopWatch.start("load");
 
 		LoadContentResponse loadContentResponse = (LoadContentResponse) getWebServiceTemplate()
-				.marshalSendAndReceive(loadContentRequest);
+		.marshalSendAndReceive(loadContentRequest);
 
 		this.stopWatch.stop();
 
@@ -123,7 +123,7 @@ public class SaajMtomClient extends WebServiceGatewaySupport {
 		byte[] buffer = new byte[1024];
 		try (InputStream in = content.getInputStream()) {
 			try (OutputStream out = new FileOutputStream(outFile)) {
-				for (int readBytes; (readBytes = in.read(buffer, 0, buffer.length)) > 0;) {
+				for (int readBytes; (readBytes = in.read(buffer, 0, buffer.length)) > 0; ) {
 					size += readBytes;
 					out.write(buffer, 0, readBytes);
 				}

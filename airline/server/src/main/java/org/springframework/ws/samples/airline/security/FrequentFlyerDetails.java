@@ -11,7 +11,7 @@ import org.springframework.ws.samples.airline.domain.FrequentFlyer;
 public class FrequentFlyerDetails implements UserDetails {
 
 	private static final List<GrantedAuthority> GRANTED_AUTHORITIES = List
-			.of(new SimpleGrantedAuthority("ROLE_FREQUENT_FLYER"));
+	.of(new SimpleGrantedAuthority("ROLE_FREQUENT_FLYER"));
 
 	private FrequentFlyer frequentFlyer;
 

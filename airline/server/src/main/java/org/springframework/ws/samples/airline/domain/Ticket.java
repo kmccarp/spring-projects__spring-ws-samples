@@ -30,19 +30,24 @@ import org.springframework.data.annotation.Persistent;
 public class Ticket implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
 	@Column(name = "ISSUE_DATE")
-	@Persistent private LocalDate issueDate;
+	@Persistent
+	private LocalDate issueDate;
 
 	@ManyToOne
-	@JoinColumn(name = "FLIGHT_ID", nullable = false) private Flight flight;
+	@JoinColumn(name = "FLIGHT_ID", nullable = false)
+	private Flight flight;
 
-	@ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	@JoinTable(name = "PASSENGER_TICKET", joinColumns = @JoinColumn(name = "TICKET_ID"), inverseJoinColumns = @JoinColumn(
-			name = "PASSENGER_ID")) private Set<Passenger> passengers = new HashSet<Passenger>();
+	name = "PASSENGER_ID"))
+	private Set<Passenger> passengers = new HashSet<Passenger>();
 
-	public Ticket() {}
+	public Ticket() {
+	}
 
 	public Ticket(Long id) {
 		this.id = id;

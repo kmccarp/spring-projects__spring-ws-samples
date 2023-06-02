@@ -26,13 +26,17 @@ public class Passenger implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID") private Long id;
+	@Column(name = "ID")
+	private Long id;
 
-	@Column(name = "FIRST_NAME") private String firstName;
+	@Column(name = "FIRST_NAME")
+	private String firstName;
 
-	@Column(name = "LAST_NAME") private String lastName;
+	@Column(name = "LAST_NAME")
+	private String lastName;
 
-	public Passenger() {}
+	public Passenger() {
+	}
 
 	public Passenger(String firstName, String lastName) {
 		this.firstName = firstName;

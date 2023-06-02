@@ -71,7 +71,7 @@ public class HolidayEndpoint {
 		Date startDate = parseDate(startDateExpression, holidayRequest);
 		Date endDate = parseDate(endDateExpression, holidayRequest);
 		String name = firstNameExpression.evaluateFirst(holidayRequest).getText() + " "
-				+ lastNameExpression.evaluateFirst(holidayRequest).getText();
+		+ lastNameExpression.evaluateFirst(holidayRequest).getText();
 
 		humanResourceService.bookHoliday(startDate, endDate, name);
 	}

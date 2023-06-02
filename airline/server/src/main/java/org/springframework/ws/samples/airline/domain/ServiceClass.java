@@ -18,9 +18,9 @@ package org.springframework.ws.samples.airline.domain;
 
 public enum ServiceClass {
 
-    ECONOMY,
+	ECONOMY,
 
-    BUSINESS,
+	BUSINESS,
 
-    FIRST
+	FIRST
 }

@@ -46,7 +46,7 @@ public interface AirlineService {
 	 * @return a list of flights
 	 */
 	List<Flight> getFlights(String fromAirportCode, String toAirportCode, ZonedDateTime departureDate,
-			ServiceClass serviceClass);
+	ServiceClass serviceClass);
 
 	/**
 	 * Books a single flight for a number of passengers. Passengers can be either specified by name or by frequent flyer
@@ -64,13 +64,13 @@ public interface AirlineService {
 	 * @see FrequentFlyer
 	 */
 	Ticket bookFlight(String flightNumber, ZonedDateTime departureTime, List<Passenger> passengers)
-			throws NoSuchFlightException, NoSeatAvailableException, NoSuchFrequentFlyerException;
+	throws NoSuchFlightException, NoSeatAvailableException, NoSuchFrequentFlyerException;
 
-    /**
-     * Returns the amount of frequent flyer award miles for the currently logged in frequent flyer.
-     *
-     * @return the amount of frequent flyer miles
-     */
-    int getFrequentFlyerMileage();
+	/**
+	* Returns the amount of frequent flyer award miles for the currently logged in frequent flyer.
+	*
+	* @return the amount of frequent flyer miles
+	*/
+	int getFrequentFlyerMileage();
 }
 

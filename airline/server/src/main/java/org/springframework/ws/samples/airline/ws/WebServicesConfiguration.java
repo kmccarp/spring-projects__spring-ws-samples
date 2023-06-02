@@ -65,7 +65,7 @@ public class WebServicesConfiguration {
 		 */
 		Wss4jSecurityInterceptor securityInterceptor = new Wss4jSecurityInterceptor();
 		securityInterceptor.setValidationActions("UsernameToken");
-		securityInterceptor.setValidationCallbackHandlers(new CallbackHandler[] { handler });
+		securityInterceptor.setValidationCallbackHandlers(new CallbackHandler[]{handler});
 		securityInterceptor.setSecureResponse(false);
 		return securityInterceptor;
 	}
@@ -73,12 +73,12 @@ public class WebServicesConfiguration {
 	@Bean
 	PayloadRootSmartSoapEndpointInterceptor smartSoapEndpointInterceptor(Wss4jSecurityInterceptor securityInterceptor) {
 		return new PayloadRootSmartSoapEndpointInterceptor(securityInterceptor,
-				"http://www.springframework.org/spring-ws/samples/airline/schemas/messages", "GetFrequentFlyerMileageRequest");
+		"http://www.springframework.org/spring-ws/samples/airline/schemas/messages", "GetFrequentFlyerMileageRequest");
 	}
 
 	@Bean
 	SpringSecurityPasswordValidationCallbackHandler springSecurityPasswordValidationCallbackHandler(
-			UserDetailsService userDetailsService) {
+	UserDetailsService userDetailsService) {
 
 		SpringSecurityPasswordValidationCallbackHandler handler = new SpringSecurityPasswordValidationCallbackHandler();
 		handler.setUserDetailsService(userDetailsService);

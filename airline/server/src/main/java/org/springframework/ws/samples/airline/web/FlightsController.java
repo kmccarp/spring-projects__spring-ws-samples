@@ -47,9 +47,9 @@ public class FlightsController {
 
 	@GetMapping
 	public String flightList(@RequestParam(value = "from", required = false) String fromAirportCode,
-			@RequestParam(value = "to", required = false) String toAirportCode,
-			@RequestParam(value = "departureDate", required = false) String departureDateString,
-			@RequestParam(value = "serviceClass", required = false) String serviceClassString, Model model) {
+	@RequestParam(value = "to", required = false) String toAirportCode,
+	@RequestParam(value = "departureDate", required = false) String departureDateString,
+	@RequestParam(value = "serviceClass", required = false) String serviceClassString, Model model) {
 
 		if (ObjectUtils.isEmpty(departureDateString)) {
 			departureDateString = LocalDate.now().toString();
@@ -66,7 +66,7 @@ public class FlightsController {
 			model.addAttribute("departureDate", departureDateString);
 			model.addAttribute("serviceClass", serviceClassString);
 			model.addAttribute("flights",
-					airlineService.getFlights(fromAirportCode, toAirportCode, departureDate, serviceClass));
+			airlineService.getFlights(fromAirportCode, toAirportCode, departureDate, serviceClass));
 		}
 		return "flights";
 	}

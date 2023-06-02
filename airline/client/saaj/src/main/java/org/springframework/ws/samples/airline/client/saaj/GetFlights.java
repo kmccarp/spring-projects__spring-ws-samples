@@ -91,7 +91,7 @@ public class GetFlights {
 		SOAPEnvelope envelope = message.getSOAPPart().getEnvelope();
 		Name getFlightsResponseName = envelope.createName("GetFlightsResponse", PREFIX, NAMESPACE_URI);
 		SOAPBodyElement getFlightsResponseElement = (SOAPBodyElement) message.getSOAPBody()
-				.getChildElements(getFlightsResponseName).next();
+		.getChildElements(getFlightsResponseName).next();
 		Name flightName = envelope.createName("flight", PREFIX, NAMESPACE_URI);
 		Iterator iterator = getFlightsResponseElement.getChildElements(flightName);
 		Transformer transformer = transfomerFactory.newTransformer();

@@ -66,9 +66,9 @@ public class AirlineServiceImpl implements AirlineService {
 	}
 
 	@Transactional(readOnly = false,
-			rollbackFor = { NoSuchFlightException.class, NoSeatAvailableException.class, NoSuchFrequentFlyerException.class })
+	rollbackFor = {NoSuchFlightException.class, NoSeatAvailableException.class, NoSuchFrequentFlyerException.class})
 	public Ticket bookFlight(String flightNumber, ZonedDateTime departureTime, List<Passenger> passengers)
-			throws NoSuchFlightException, NoSeatAvailableException, NoSuchFrequentFlyerException {
+	throws NoSuchFlightException, NoSeatAvailableException, NoSuchFrequentFlyerException {
 
 		Assert.notEmpty(passengers, "No passengers given");
 
@@ -111,11 +111,11 @@ public class AirlineServiceImpl implements AirlineService {
 	public Flight getFlight(Long id) throws NoSuchFlightException {
 
 		return flightDao.findById(id) //
-				.orElseThrow(() -> new NoSuchFlightException(id));
+		.orElseThrow(() -> new NoSuchFlightException(id));
 	}
 
 	public List<Flight> getFlights(String fromAirportCode, String toAirportCode, ZonedDateTime departureDate,
-			ServiceClass serviceClass) {
+	ServiceClass serviceClass) {
 
 		if (serviceClass == null) {
 			serviceClass = ServiceClass.ECONOMY;
@@ -143,7 +143,7 @@ public class AirlineServiceImpl implements AirlineService {
 		}
 
 		return Optional.ofNullable(frequentFlyerSecurityService.getCurrentlyAuthenticatedFrequentFlyer())
-				.map(FrequentFlyer::getMiles) //
-				.orElse(0);
+		.map(FrequentFlyer::getMiles) //
+		.orElse(0);
 	}
 }

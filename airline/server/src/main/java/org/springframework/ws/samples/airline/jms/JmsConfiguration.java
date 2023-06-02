@@ -24,7 +24,7 @@ public class JmsConfiguration {
 	ArtemisConfigurationCustomizer customizer() {
 		return configuration -> {
 			configuration.addConnectorConfiguration("nettyConnector",
-					new TransportConfiguration(NettyConnectorFactory.class.getName()));
+			new TransportConfiguration(NettyConnectorFactory.class.getName()));
 			configuration.addAcceptorConfiguration(new TransportConfiguration(NettyAcceptorFactory.class.getName()));
 		};
 	}
@@ -34,7 +34,7 @@ public class JmsConfiguration {
 	 */
 	@Bean
 	DefaultMessageListenerContainer containerFactory(ConnectionFactory connectionFactory,
-			WebServiceMessageListener messageListener) {
+	WebServiceMessageListener messageListener) {
 
 		DefaultMessageListenerContainer container = new DefaultMessageListenerContainer();
 		container.setConnectionFactory(connectionFactory);
@@ -45,7 +45,7 @@ public class JmsConfiguration {
 
 	@Bean
 	WebServiceMessageListener messageListener(WebServiceMessageFactory messageFactory,
-			WebServiceMessageReceiver messageReceiver) {
+	WebServiceMessageReceiver messageReceiver) {
 
 		WebServiceMessageListener messageListener = new WebServiceMessageListener();
 		messageListener.setMessageFactory(messageFactory);

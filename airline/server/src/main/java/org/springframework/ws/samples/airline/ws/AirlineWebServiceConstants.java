@@ -19,13 +19,13 @@ package org.springframework.ws.samples.airline.ws;
 /** @author Arjen Poutsma */
 public interface AirlineWebServiceConstants {
 
-    String BOOK_FLIGHT_REQUEST = "BookFlightRequest";
+	String BOOK_FLIGHT_REQUEST = "BookFlightRequest";
 
-    String GET_FLIGHTS_REQUEST = "GetFlightsRequest";
+	String GET_FLIGHTS_REQUEST = "GetFlightsRequest";
 
-    String GET_FREQUENT_FLYER_MILEAGE_RESPONSE = "GetFrequentFlyerMileageResponse";
+	String GET_FREQUENT_FLYER_MILEAGE_RESPONSE = "GetFrequentFlyerMileageResponse";
 
-    String MESSAGES_NAMESPACE = "http://www.springframework.org/spring-ws/samples/airline/schemas/messages";
+	String MESSAGES_NAMESPACE = "http://www.springframework.org/spring-ws/samples/airline/schemas/messages";
 
-    String GET_FREQUENT_FLYER_MILEAGE_REQUEST = "GetFrequentFlyerMileageRequest";
+	String GET_FREQUENT_FLYER_MILEAGE_REQUEST = "GetFrequentFlyerMileageRequest";
 }

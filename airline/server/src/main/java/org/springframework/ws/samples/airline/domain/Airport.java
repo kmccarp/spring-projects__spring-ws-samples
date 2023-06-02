@@ -28,13 +28,17 @@ import java.io.Serializable;
 public class Airport implements Serializable {
 
 	@Id
-	@Column(name = "CODE") private String code;
+	@Column(name = "CODE")
+	private String code;
 
-	@Column(name = "NAME") private String name;
+	@Column(name = "NAME")
+	private String name;
 
-	@Column(name = "CITY") private String city;
+	@Column(name = "CITY")
+	private String city;
 
-	public Airport() {}
+	public Airport() {
+	}
 
 	public Airport(String code, String name, String city) {
 		this.code = code;

@@ -28,14 +28,14 @@ import org.springframework.ws.soap.server.endpoint.annotation.SoapFault;
 @SoapFault(faultCode = FaultCode.CLIENT)
 public class NoSuchFrequentFlyerException extends Exception {
 
-    private String username;
+	private String username;
 
-    public NoSuchFrequentFlyerException(String username) {
-        super("No frequent flyer with name [" + username + "]");
-        this.username = username;
-    }
+	public NoSuchFrequentFlyerException(String username) {
+		super("No frequent flyer with name [" + username + "]");
+		this.username = username;
+	}
 
-    public String getusername() {
-        return username;
-    }
+	public String getusername() {
+		return username;
+	}
 }

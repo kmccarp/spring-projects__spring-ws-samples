@@ -85,8 +85,8 @@ public class AirlineEndpoint {
 	@Namespace(prefix = "m", uri = MESSAGES_NAMESPACE)
 	@ResponsePayload
 	public GetFlightsResponse getFlights(@XPathParam("//m:from") String from, @XPathParam("//m:to") String to,
-			@XPathParam("//m:departureDate") String departureDateString,
-			@XPathParam("//m:serviceClass") String serviceClassString) throws DatatypeConfigurationException {
+	@XPathParam("//m:departureDate") String departureDateString,
+	@XPathParam("//m:serviceClass") String serviceClassString) throws DatatypeConfigurationException {
 
 		if (logger.isDebugEnabled()) {
 			logger.debug("Received GetFlightsRequest '" + from + "' to '" + to + "' on " + departureDateString);
@@ -99,7 +99,7 @@ public class AirlineEndpoint {
 			serviceClass = ServiceClass.valueOf(serviceClassString.toUpperCase());
 		}
 		List<org.springframework.ws.samples.airline.domain.Flight> flights = airlineService.getFlights(from, to,
-				departureDate, serviceClass);
+		departureDate, serviceClass);
 
 		GetFlightsResponse response = objectFactory.createGetFlightsResponse();
 		for (org.springframework.ws.samples.airline.domain.Flight domainFlight : flights) {
@@ -118,15 +118,15 @@ public class AirlineEndpoint {
 	@PayloadRoot(localPart = BOOK_FLIGHT_REQUEST, namespace = MESSAGES_NAMESPACE)
 	@ResponsePayload
 	public JAXBElement<Ticket> bookFlight(@RequestPayload BookFlightRequest request) throws NoSeatAvailableException,
-			DatatypeConfigurationException, NoSuchFlightException, NoSuchFrequentFlyerException {
+	DatatypeConfigurationException, NoSuchFlightException, NoSuchFrequentFlyerException {
 
 		if (logger.isDebugEnabled()) {
 			logger.debug("Received BookingFlightRequest '" + request.getFlightNumber() + "' on '" + request.getDepartureTime()
-					+ "' for " + request.getPassengers().getPassengerOrUsername());
+			+ "' for " + request.getPassengers().getPassengerOrUsername());
 		}
 
 		Ticket ticket = bookSchemaFlight(request.getFlightNumber(), request.getDepartureTime(),
-				request.getPassengers().getPassengerOrUsername());
+		request.getPassengers().getPassengerOrUsername());
 
 		return objectFactory.createBookFlightResponse(ticket);
 	}
@@ -135,8 +135,8 @@ public class AirlineEndpoint {
 	 * Converts between the domain and schema types.
 	 */
 	private Ticket bookSchemaFlight(String flightNumber, XMLGregorianCalendar xmlDepartureTime,
-			List<Object> passengerOrUsernameList) throws NoSeatAvailableException, NoSuchFlightException,
-			NoSuchFrequentFlyerException, DatatypeConfigurationException {
+	List<Object> passengerOrUsernameList) throws NoSeatAvailableException, NoSuchFlightException,
+	NoSuchFrequentFlyerException, DatatypeConfigurationException {
 
 		ZonedDateTime departureTime = SchemaConversionUtils.toDateTime(xmlDepartureTime);
 		List<Passenger> passengers = new ArrayList<>(passengerOrUsernameList.size());
@@ -152,7 +152,7 @@ public class AirlineEndpoint {
 		}
 
 		org.springframework.ws.samples.airline.domain.Ticket domainTicket = airlineService.bookFlight(flightNumber,
-				departureTime, passengers);
+		departureTime, passengers);
 
 		return SchemaConversionUtils.toSchemaType(domainTicket);
 	}

@@ -25,8 +25,8 @@ import org.springframework.xml.transform.StringSource;
 public class JmsClient extends WebServiceGatewaySupport {
 
 	private static final String PAYLOAD = "<airline:GetFlightsRequest xmlns:airline=\"http://www.springframework.org/spring-ws/samples/airline/schemas/messages\">"
-			+ "<airline:from>AMS</airline:from>" + "<airline:to>VCE</airline:to>"
-			+ "<airline:departureDate>2006-01-31</airline:departureDate>" + "</airline:GetFlightsRequest>";
+	+ "<airline:from>AMS</airline:from>" + "<airline:to>VCE</airline:to>"
+	+ "<airline:departureDate>2006-01-31</airline:departureDate>" + "</airline:GetFlightsRequest>";
 
 	public void getFlights() {
 		getWebServiceTemplate().sendSourceAndReceiveToResult(new StringSource(PAYLOAD), new StreamResult(System.out));

@@ -32,7 +32,7 @@ public class GetFrequentFlyerMileage extends WebServiceGatewaySupport {
 	public void getFrequentFlyerMileage() {
 
 		Source source = new StringSource(
-				"<GetFrequentFlyerMileageRequest xmlns=\"http://www.springframework.org/spring-ws/samples/airline/schemas/messages\" />");
+		"<GetFrequentFlyerMileageRequest xmlns=\"http://www.springframework.org/spring-ws/samples/airline/schemas/messages\" />");
 
 		getWebServiceTemplate().sendSourceAndReceiveToResult(source, new StreamResult(System.out));
 	}

@@ -26,13 +26,17 @@ import jakarta.persistence.Table;
 @PrimaryKeyJoinColumn(name = "PASSENGER_ID")
 public class FrequentFlyer extends Passenger {
 
-	@Column(name = "USERNAME") private String username;
+	@Column(name = "USERNAME")
+	private String username;
 
-	@Column(name = "PASSWORD") private String password;
+	@Column(name = "PASSWORD")
+	private String password;
 
-	@Column(name = "MILES") private int miles;
+	@Column(name = "MILES")
+	private int miles;
 
-	public FrequentFlyer() {}
+	public FrequentFlyer() {
+	}
 
 	public FrequentFlyer(String username) {
 		this.username = username;
@@ -88,7 +92,7 @@ public class FrequentFlyer extends Passenger {
 	@Override
 	public String toString() {
 		return "FrequentFlyer{" + "username='" + username + '\'' + ", password='" + password + '\'' + ", miles=" + miles
-				+ '}';
+		+ '}';
 	}
 
 	public void addMiles(int miles) {

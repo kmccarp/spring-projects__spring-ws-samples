@@ -28,30 +28,40 @@ public class Flight implements Serializable {
 
 	@Id
 	@Column(name = "ID")
-	@GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-	@Column(name = "NUMBER") private String number;
+	@Column(name = "NUMBER")
+	private String number;
 
 	@Column(name = "DEPARTURE_TIME")
-	@Persistent private ZonedDateTime departureTime;
+	@Persistent
+	private ZonedDateTime departureTime;
 
 	@ManyToOne
-	@JoinColumn(name = "FROM_AIRPORT_CODE", nullable = false) private Airport from;
+	@JoinColumn(name = "FROM_AIRPORT_CODE", nullable = false)
+	private Airport from;
 
 	@Column(name = "ARRIVAL_TIME")
-	@Persistent private ZonedDateTime arrivalTime;
+	@Persistent
+	private ZonedDateTime arrivalTime;
 
 	@ManyToOne
-	@JoinColumn(name = "TO_AIRPORT_CODE", nullable = false) private Airport to;
+	@JoinColumn(name = "TO_AIRPORT_CODE", nullable = false)
+	private Airport to;
 
 	@Column(name = "SERVICE_CLASS")
-	@Enumerated(EnumType.STRING) private ServiceClass serviceClass;
+	@Enumerated(EnumType.STRING)
+	private ServiceClass serviceClass;
 
-	@Column(name = "SEATS_AVAILABLE") private int seatsAvailable;
+	@Column(name = "SEATS_AVAILABLE")
+	private int seatsAvailable;
 
-	@Column(name = "MILES") private int miles;
+	@Column(name = "MILES")
+	private int miles;
 
-	public Flight() {}
+	public Flight() {
+	}
 
 	public Flight(Long id) {
 		this.id = id;

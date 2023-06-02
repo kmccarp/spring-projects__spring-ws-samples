@@ -55,7 +55,7 @@ public class EchoEndpointTest {
 	public void testInvokeInternal() throws Exception {
 
 		Element echoRequest = requestDocument.createElementNS(EchoEndpoint.NAMESPACE_URI,
-				EchoEndpoint.ECHO_REQUEST_LOCAL_NAME);
+		EchoEndpoint.ECHO_REQUEST_LOCAL_NAME);
 		Text requestText = requestDocument.createTextNode("ABC");
 		echoRequest.appendChild(requestText);
 		when(echoServiceMock.echo("ABC")).thenReturn("DEF");

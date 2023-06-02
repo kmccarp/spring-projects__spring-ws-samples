@@ -28,14 +28,14 @@ import org.springframework.ws.soap.server.endpoint.annotation.SoapFault;
 @SoapFault(faultCode = FaultCode.SERVER)
 public class NoSeatAvailableException extends Exception {
 
-    private Flight flight;
+	private Flight flight;
 
-    public NoSeatAvailableException(Flight flight) {
-        super("Flight [" + flight + "] has not more seats available");
-        this.flight = flight;
-    }
+	public NoSeatAvailableException(Flight flight) {
+		super("Flight [" + flight + "] has not more seats available");
+		this.flight = flight;
+	}
 
-    public Flight getFlight() {
-        return flight;
-    }
+	public Flight getFlight() {
+		return flight;
+	}
 }

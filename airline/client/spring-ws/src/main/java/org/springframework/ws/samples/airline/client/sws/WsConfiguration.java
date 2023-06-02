@@ -26,7 +26,7 @@ public class WsConfiguration {
 
 	@Bean
 	GetFlights getFlights(SoapMessageFactory messageFactory, Jaxb2Marshaller marshaller,
-			Wss4jSecurityInterceptor securityInterceptor) {
+	Wss4jSecurityInterceptor securityInterceptor) {
 
 		GetFlights getFlights = new GetFlights(messageFactory);
 		getFlights.setDefaultUri("http://localhost:8080/airline-server/services");
@@ -37,13 +37,13 @@ public class WsConfiguration {
 
 	@Bean
 	GetFrequentFlyerMileage getFrequentFlyerMileage(SoapMessageFactory messageFactory, Jaxb2Marshaller marshaller,
-			Wss4jSecurityInterceptor securityInterceptor) {
+	Wss4jSecurityInterceptor securityInterceptor) {
 
 		GetFrequentFlyerMileage getFrequentFlyerMileage = new GetFrequentFlyerMileage(messageFactory);
 		getFrequentFlyerMileage.setDefaultUri("http://localhost:8080/airline-server/services");
 		getFrequentFlyerMileage.setMarshaller(marshaller);
 		getFrequentFlyerMileage.setUnmarshaller(marshaller);
-		getFrequentFlyerMileage.setInterceptors(new ClientInterceptor[] { securityInterceptor });
+		getFrequentFlyerMileage.setInterceptors(new ClientInterceptor[]{securityInterceptor});
 		return getFrequentFlyerMileage;
 	}
 

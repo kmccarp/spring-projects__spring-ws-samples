@@ -32,7 +32,7 @@ public class SpringSecurityFrequentFlyerService implements FrequentFlyerSecurity
 	@Transactional
 	public FrequentFlyer getFrequentFlyer(String username) throws NoSuchFrequentFlyerException {
 		return frequentFlyerDao.findByUsername(username) //
-				.orElseThrow(() -> new NoSuchFrequentFlyerException(username));
+		.orElseThrow(() -> new NoSuchFrequentFlyerException(username));
 	}
 
 	@Override
@@ -55,8 +55,8 @@ public class SpringSecurityFrequentFlyerService implements FrequentFlyerSecurity
 		log.debug("Looking up " + username);
 
 		FrequentFlyerDetails details = frequentFlyerDao.findByUsername(username) //
-				.map(FrequentFlyerDetails::new) //
-				.orElseThrow(() -> new UsernameNotFoundException("Frequent flyer '" + username + "' not found"));
+		.map(FrequentFlyerDetails::new) //
+		.orElseThrow(() -> new UsernameNotFoundException("Frequent flyer '" + username + "' not found"));
 
 		log.debug("Found " + details);
 

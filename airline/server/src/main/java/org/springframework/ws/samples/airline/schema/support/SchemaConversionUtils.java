@@ -33,10 +33,11 @@ import org.springframework.ws.samples.airline.schema.*;
 /** @author Arjen Poutsma */
 public abstract class SchemaConversionUtils {
 
-	private SchemaConversionUtils() {}
+	private SchemaConversionUtils() {
+	}
 
 	public static Flight toSchemaType(org.springframework.ws.samples.airline.domain.Flight domainFlight)
-			throws DatatypeConfigurationException {
+	throws DatatypeConfigurationException {
 
 		Flight schemaFlight = new Flight();
 		schemaFlight.setNumber(domainFlight.getNumber());
@@ -51,18 +52,18 @@ public abstract class SchemaConversionUtils {
 	public static List<Flight> toSchemaType(List<org.springframework.ws.samples.airline.domain.Flight> domainFlights) {
 
 		return domainFlights.stream() //
-				.map(flight -> {
-					try {
-						return toSchemaType(flight);
-					} catch (DatatypeConfigurationException e) {
-						throw new RuntimeException(e);
-					}
-				}) //
-				.collect(Collectors.toList());
+		.map(flight -> {
+			try {
+				return toSchemaType(flight);
+			} catch (DatatypeConfigurationException e) {
+				throw new RuntimeException(e);
+			}
+		}) //
+		.collect(Collectors.toList());
 	}
 
 	public static XMLGregorianCalendar toXMLGregorianCalendar(ZonedDateTime dateTime)
-			throws DatatypeConfigurationException {
+	throws DatatypeConfigurationException {
 
 		DatatypeFactory factory = DatatypeFactory.newInstance();
 		return factory.newXMLGregorianCalendar(GregorianCalendar.from(dateTime));
@@ -76,7 +77,7 @@ public abstract class SchemaConversionUtils {
 
 		DatatypeFactory factory = DatatypeFactory.newInstance();
 		return factory.newXMLGregorianCalendarDate(localDate.getYear(), localDate.getMonthValue(),
-				localDate.getDayOfMonth(), DatatypeConstants.FIELD_UNDEFINED);
+		localDate.getDayOfMonth(), DatatypeConstants.FIELD_UNDEFINED);
 	}
 
 	public static LocalDate toLocalDate(XMLGregorianCalendar calendar) {
@@ -97,7 +98,7 @@ public abstract class SchemaConversionUtils {
 	}
 
 	public static ServiceClass toSchemaType(
-			org.springframework.ws.samples.airline.domain.ServiceClass domainServiceClass) {
+	org.springframework.ws.samples.airline.domain.ServiceClass domainServiceClass) {
 		switch (domainServiceClass) {
 			case BUSINESS:
 				return ServiceClass.BUSINESS;
@@ -111,7 +112,7 @@ public abstract class SchemaConversionUtils {
 	}
 
 	public static org.springframework.ws.samples.airline.domain.ServiceClass toDomainType(
-			ServiceClass schemaServiceClass) {
+	ServiceClass schemaServiceClass) {
 		if (schemaServiceClass == null) {
 			return null;
 		}
@@ -135,7 +136,7 @@ public abstract class SchemaConversionUtils {
 	}
 
 	public static Ticket toSchemaType(org.springframework.ws.samples.airline.domain.Ticket domainTicket)
-			throws DatatypeConfigurationException {
+	throws DatatypeConfigurationException {
 		Ticket schemaTicket = new Ticket();
 		schemaTicket.setId(domainTicket.getId());
 		schemaTicket.setFlight(toSchemaType(domainTicket.getFlight()));

@@ -95,10 +95,10 @@ public class AxisMain {
 		System.out.println(flight.getNumber() + "\t" + flight.getServiceClass());
 		System.out.println("------------");
 		System.out.println("Depart:\t" + flight.getFrom().getCode() + "-" + flight.getFrom().getName() + "\t"
-				+ dateFormat.format(flight.getDepartureTime().getTime()));
+		+ dateFormat.format(flight.getDepartureTime().getTime()));
 		System.out.println("\t" + flight.getFrom().getCity());
 		System.out.println("Arrive:\t" + flight.getTo().getCode() + "-" + flight.getTo().getName() + "\t"
-				+ dateFormat.format(flight.getArrivalTime().getTime()));
+		+ dateFormat.format(flight.getArrivalTime().getTime()));
 		System.out.println("\t" + flight.getTo().getCity());
 	}
 

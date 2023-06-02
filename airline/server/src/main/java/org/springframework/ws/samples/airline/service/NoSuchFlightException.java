@@ -29,25 +29,25 @@ import org.springframework.ws.soap.server.endpoint.annotation.SoapFault;
 @SoapFault(faultCode = FaultCode.CLIENT)
 public class NoSuchFlightException extends Exception {
 
-    private String flightNumber;
+	private String flightNumber;
 
-    private ZonedDateTime departureTime;
+	private ZonedDateTime departureTime;
 
-    public NoSuchFlightException(String flightNumber, ZonedDateTime departureTime) {
-        super("No flight with number [" + flightNumber + "] and departure time [" + departureTime + "]");
-        this.flightNumber = flightNumber;
-        this.departureTime = departureTime;
-    }
+	public NoSuchFlightException(String flightNumber, ZonedDateTime departureTime) {
+		super("No flight with number [" + flightNumber + "] and departure time [" + departureTime + "]");
+		this.flightNumber = flightNumber;
+		this.departureTime = departureTime;
+	}
 
-    public NoSuchFlightException(Long id) {
-        super("No flight with id [" + id + "]");
-    }
+	public NoSuchFlightException(Long id) {
+		super("No flight with id [" + id + "]");
+	}
 
-    public String getFlightNumber() {
-        return flightNumber;
-    }
+	public String getFlightNumber() {
+		return flightNumber;
+	}
 
-    public ZonedDateTime getDepartureTime() {
-        return departureTime;
-    }
+	public ZonedDateTime getDepartureTime() {
+		return departureTime;
+	}
 }

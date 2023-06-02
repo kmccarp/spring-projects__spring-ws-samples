@@ -27,8 +27,8 @@ import org.springframework.ws.samples.airline.domain.ServiceClass;
 public interface FlightDao extends CrudRepository<Flight, Long> {
 
 	@Query("SELECT f FROM Flight f WHERE f.from.code = :fromAirportCode "
-			+ "AND f.to.code = :toAirportCode AND f.departureTime >= :#{#date} AND f.departureTime <= :#{#date.plusDays(1)} AND "
-			+ "f.serviceClass = :class")
+	+ "AND f.to.code = :toAirportCode AND f.departureTime >= :#{#date} AND f.departureTime <= :#{#date.plusDays(1)} AND "
+	+ "f.serviceClass = :class")
 	List<Flight> findFlights(@Param("fromAirportCode") String fromAirportCode, //
 			@Param("toAirportCode") String toAirportCode, //
 			@Param("date") ZonedDateTime date, //

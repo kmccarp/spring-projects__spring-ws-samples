@@ -31,9 +31,9 @@ import org.apache.commons.logging.LogFactory;
 @Service
 public class StubHumanResourceService implements HumanResourceService {
 
-    private static final Log logger = LogFactory.getLog(StubHumanResourceService.class);
+	private static final Log logger = LogFactory.getLog(StubHumanResourceService.class);
 
-    public void bookHoliday(Date startDate, Date endDate, String name) {
-        logger.info("Booking holiday for [" + startDate + "-" + endDate + "] for [" + name + "] ");
-    }
+	public void bookHoliday(Date startDate, Date endDate, String name) {
+		logger.info("Booking holiday for [" + startDate + "-" + endDate + "] for [" + name + "] ");
+	}
 }

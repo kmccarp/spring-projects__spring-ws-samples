@@ -43,7 +43,7 @@ public class JaxWsMain {
 				service = new AirlineService();
 			} else {
 				QName serviceName = new QName("http://www.springframework.org/spring-ws/samples/airline/definitions",
-						"AirlineService");
+				"AirlineService");
 				service = new AirlineService(new URL(args[0]), serviceName);
 			}
 
@@ -53,7 +53,7 @@ public class JaxWsMain {
 			request.setFrom("AMS");
 			request.setTo("VCE");
 			XMLGregorianCalendar departureDate = DatatypeFactory.newInstance().newXMLGregorianCalendarDate(2006, 1, 31,
-					DatatypeConstants.FIELD_UNDEFINED);
+			DatatypeConstants.FIELD_UNDEFINED);
 			request.setDepartureDate(departureDate);
 
 			System.out.format("Requesting flights on %1tD%n", departureDate.toGregorianCalendar());
@@ -106,10 +106,10 @@ public class JaxWsMain {
 		System.out.format("%1s\t%2s%n", flight.getNumber(), flight.getServiceClass());
 		System.out.format("------------%n");
 		System.out.format("Depart:\t%1s-%2s\t%tR%n", flight.getFrom().getCode(), flight.getFrom().getName(),
-				flight.getDepartureTime().toGregorianCalendar());
+		flight.getDepartureTime().toGregorianCalendar());
 		System.out.format("\t%1s%n", flight.getFrom().getCity());
 		System.out.format("Arrive:\t%1s-%2s\t%tR%n", flight.getTo().getCode(), flight.getTo().getName(),
-				flight.getArrivalTime().toGregorianCalendar());
+		flight.getArrivalTime().toGregorianCalendar());
 		System.out.format("\t%1s%n", flight.getTo().getCity());
 	}
 
